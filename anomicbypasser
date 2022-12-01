@@ -1,0 +1,39 @@
+local LPlayer = game.Players.LocalPlayer
+
+local function bypass()
+    repeat wait() until LPlayer.Character.HumanoidRootPart.Anchored == false    
+        for i, v in next, getconnections(game:GetService("Players").LocalPlayer.Character.DescendantAdded) do
+            v:Disable()
+    	end
+        local s, err = pcall(function()
+            local mt = getrawmetatable(game)
+            setreadonly(mt, false)
+            local namecall = mt.__namecall
+
+            mt.__namecall = function(self,...)
+                local args = {...}
+                local method = getnamecallmethod()
+                if tostring(method) == 'FindPartOnRayWithWhitelist' and getcallingscript() == game.Players.LocalPlayer.PlayerGui['_L.Handler'].GunHandlerLocal then
+                    wait(9e9)
+                    return
+                end
+                if method == "Kick" then
+                    notify("Anomic V","Server tried kicking you")
+                    return nil                    
+                end        
+                if tostring(method) == "FireServer" then
+                    if shotgunMod1 and tostring(self) == "AmmoRemover" then                        
+                        return nil
+                    end                           
+                end
+                if tostring(method) == "Fire" then
+                    if Rmod and tostring(self) == "ShootAnim" then
+                        return nil
+                    end                   
+                end
+            return namecall(self,...)
+        end
+    end)         
+end
+
+bypass()
