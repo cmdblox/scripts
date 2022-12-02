@@ -76,12 +76,6 @@ local UISection2 = Ui:addSection("Credits: EdgeIY, for the fly, Alwayswin for a 
 -- // Cmd Section
 local testsection = Cmd:addSection("moded by: cmdblock")
 
-testsection:addButton({
-    title = "CMD",
-    callback = function()
-        print("Clicked")
-    end
-})
 
 print("Loading | R")
 if syn then
@@ -1150,6 +1144,9 @@ teleSection1:addKeybind("Click TP Keybind", nil, function()
         end
     end
 end)
+--< cmd
+testsection:addButton({title = "Button",callback = function() print(game.Players.LocalPlayer.Name) end})
+		
 --< teleportation
 teleSection2:addButton("Arway", function()
 if getCurrentVehicle() ~= nil then
