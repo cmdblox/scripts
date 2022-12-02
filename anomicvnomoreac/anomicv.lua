@@ -1145,7 +1145,7 @@ teleSection1:addKeybind("Click TP Keybind", nil, function()
     end
 end)
 --< cmd
-testsection:addButton("Button",function()print(game)end)
+testsection:addButton("Button",function()game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(game.Name, "All")end)
 		
 --< teleportation
 teleSection2:addButton("Arway", function()
