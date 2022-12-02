@@ -74,7 +74,8 @@ local UISection2 = Ui:addSection("Discord: https://discord.gg/jhb37CBT8U")
 local UISection2 = Ui:addSection("Credits: EdgeIY, for the fly, Alwayswin for a few FE features")
 
 -- // Cmd Section
-local testsection = Cmd:addSection("moded by: cmdblock")
+local slogensection = Cmd:addSection("moded by: cmdblock")
+local cratesection = Cmd:addSection("Crates")
 
 
 print("Loading | R")
@@ -1144,8 +1145,46 @@ teleSection1:addKeybind("Click TP Keybind", nil, function()
         end
     end
 end)
+		
+local function getitem()
+    for i,v in pairs(workspace.Entities:GetChildren()) do
+        if v.Name == "Crate" and v.Properties.ItemsLeft.Value ~= -1 and tostring(v.Properties.Owner.Value) == tostring(lp.Name) then
+			if v.Properties.ItemLocked.Value then
+			game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").LockPrinter:FireServer(v)
+			end
+			for i = v.Properties.ItemsLeft.Value+1,1,-1 do
+            game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").DeliveryFunction:FireServer("TakeItem",v)
+			task.wait(0.35)
+        end
+		end
+    end
+end
+
+local function unlockallcrates()
+    for i,v in pairs(workspace.Entities:GetChildren()) do
+        if v.Name == "Crate" and tostring(v.Properties.Owner.Value) == tostring(lp.Name) then
+			if v.Properties.ItemLocked.Value then
+			game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").LockPrinter:FireServer(v)
+			end
+		end
+    end
+end
+		
+local function lockallcrates()
+    for i,v in pairs(workspace.Entities:GetChildren()) do
+        if v.Name == "Crate" and tostring(v.Properties.Owner.Value) == tostring(lp.Name) then
+			if not v.Properties.ItemLocked.Value then
+			game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").LockPrinter:FireServer(v)
+			end
+		end
+    end
+end
+	
 --< cmd
-testsection:addButton("Say Slogon",function()game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("cmdblock is cooler than me/you", "All")end)
+slogensection:addButton("Say Slogen",function()game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("cmdblock is cooler than me/you", "All")end)
+cratesection:addButton("Collect the items from crates",function()getitem()end)
+cratesection:addButton("Unlock all crates",function()unlockallcrates()end)
+cratesection:addButton("Lock all crates",function()lockallcrates()end)
 		
 --< teleportation
 teleSection2:addButton("Arway", function()
