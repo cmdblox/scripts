@@ -1145,12 +1145,7 @@ teleSection1:addKeybind("Click TP Keybind", nil, function()
     end
 end)
 --< cmd
-testsection:addButton({
-    title = "Button",
-    callback = function()
-        print(game)
-    end
-})
+testsection:addButton("Button",function()print(game)end)
 		
 --< teleportation
 teleSection2:addButton("Arway", function()
