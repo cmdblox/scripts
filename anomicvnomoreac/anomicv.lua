@@ -1154,6 +1154,11 @@ local function getitem()
 			if v.Properties.ItemLocked.Value then
 			game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").LockPrinter:FireServer(v)
 			end
+			 if getCurrentVehicle() ~= nil then
+            		getCurrentVehicle():SetPrimaryPartCFrame(v.BGPart.CFrame) * CFrame.new(0,-2,0))
+			else 
+			LPlayer.Character.HumanoidRootPart.CFrame = v.BGPart.CFrame      
+			end
 			for i = v.Properties.ItemsLeft.Value+1,1,-1 do
             game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").DeliveryFunction:FireServer("TakeItem",v)
 			task.wait(0.35)
