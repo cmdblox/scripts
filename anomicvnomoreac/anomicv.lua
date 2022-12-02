@@ -130,6 +130,7 @@ local wLighting = game:GetService("Lighting")
 local UIS = game:GetService'UserInputService'
 local Players  = game:GetService("Players")
 local LPlayer  = Players.LocalPlayer
+local lp = LPlayer
 local mouse = LPlayer:GetMouse()
 --Mods
 local infiniteStamina = false
