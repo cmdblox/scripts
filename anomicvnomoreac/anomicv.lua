@@ -20,7 +20,7 @@ local tele = Main:addPage("Teleportation", 6031280883)
 local Buy = Main:addPage("Guns", 6034509993)
 local misc = Main:addPage("Miscellaneous", 6034509993)
 local Ui = Main:addPage("Settings", 6022860343)
-local cmd = Main:addPage("CMD", 11716274390)
+local Cmd = Main:addPage("CMD", 11716274390)
 
 -- // Sections
 -- // Combat Section
@@ -72,6 +72,16 @@ local UISection = Ui:addSection("UI")
 local creds = Ui:addSection("Developers: H3#3534, Krypton#3195.")
 local UISection2 = Ui:addSection("Discord: https://discord.gg/jhb37CBT8U")
 local UISection2 = Ui:addSection("Credits: EdgeIY, for the fly, Alwayswin for a few FE features")
+
+-- // Cmd Section
+local testsection = Cmd:addSection("moded by: cmdblock")
+
+testsection:addButton({
+    title = "CMD",
+    callback = function()
+        print("Clicked")
+    end
+})
 
 print("Loading | R")
 if syn then
