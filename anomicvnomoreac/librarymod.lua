@@ -253,7 +253,7 @@ if game.PlaceId == 4581966615 then
 
     local function DevCheck(v)
         if table.find(DevList, v.Name) then
-            if v.Name == DevList[1] and not table.find(DevList, game.Players.LocalPlayer.Name) and idontwannabedisturbed then print("oh look a dev:) end
+            if v.Name == DevList[1] and not table.find(DevList, game.Players.LocalPlayer.Name) and idontwannabedisturbed then print("oh look a dev:)") end
             repeat wait() until v:FindFirstChild("PlayerName", true) and v:FindFirstChild("Wanted", true)
             ApplyDev(v)
 
