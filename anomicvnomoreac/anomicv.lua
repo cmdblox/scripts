@@ -1155,7 +1155,7 @@ local function getitem()
 			game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").LockPrinter:FireServer(v)
 			end
 			 if getCurrentVehicle() ~= nil then
-            		getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(v.BGPart.CFrame)) * CFrame.new(0,-2,0))
+            		getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(v.BGPart.CFrame)) * CFrame.new(0,-2,0)) -- why wont you save
 			else 
 			LPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.BGPart.CFrame)  
 			end
