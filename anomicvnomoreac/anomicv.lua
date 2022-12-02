@@ -1155,14 +1155,15 @@ local function getitem()
 			game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").LockPrinter:FireServer(v)
 			end
 			 if getCurrentVehicle() ~= nil then
-            		getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(v.BGPart.CFrame)) * CFrame.new(0,-2,0)) -- why wont you save
+            		getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(v.BGPart.CFrame) * CFrame.new(0,-2,0)) -- why wont you save
 			else 
-			LPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.BGPart.CFrame)  
+			LPlayer.Character.HumanoidRootPart.CFrame = v.BGPart.CFrame 
 			end
 			for i = v.Properties.ItemsLeft.Value+1,1,-1 do
             game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").DeliveryFunction:FireServer("TakeItem",v)
 			task.wait(0.35)
-        end
+        	end
+			game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").DeliveryFunction:FireServer("TakeItem",v)
 		end
     end
 end
