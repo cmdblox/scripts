@@ -76,6 +76,7 @@ local UISection2 = Ui:addSection("Credits: EdgeIY, for the fly, Alwayswin for a 
 -- // Cmd Section
 local slogensection = Cmd:addSection("moded by: cmdblock")
 local cratesection = Cmd:addSection("Crates")
+local itemsection = Cmd:addSection("Items")
 
 
 print("Loading | R")
@@ -1186,6 +1187,7 @@ slogensection:addButton("Say Slogen",function()game.ReplicatedStorage.DefaultCha
 cratesection:addButton("Collect the items from crates",function()getitem()end)
 cratesection:addButton("Unlock all crates",function()unlockallcrates()end)
 cratesection:addButton("Lock all crates",function()lockallcrates()end)
+itemsection:addButton("Puts all items in your hand",function()for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do v.Parent = game.Players.LocalPlayer end)
 		
 --< teleportation
 teleSection2:addButton("Arway", function()
