@@ -1187,7 +1187,7 @@ slogensection:addButton("Say Slogen",function()game.ReplicatedStorage.DefaultCha
 cratesection:addButton("Collect the items from crates",function()getitem()end)
 cratesection:addButton("Unlock all crates",function()unlockallcrates()end)
 cratesection:addButton("Lock all crates",function()lockallcrates()end)
-itemsection:addButton("Puts all items in your hand",function()for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do v.Parent = game.Players.LocalPlayer end)
+itemsection:addButton("Puts all items in your hand",function()for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do v.Parent = game.Players.LocalPlayer.Character end)
 		
 --< teleportation
 teleSection2:addButton("Arway", function()
