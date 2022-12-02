@@ -20,6 +20,7 @@ local tele = Main:addPage("Teleportation", 6031280883)
 local Buy = Main:addPage("Guns", 6034509993)
 local misc = Main:addPage("Miscellaneous", 6034509993)
 local Ui = Main:addPage("Settings", 6022860343)
+local cmd = Main:addPage("CMD", 11716274390)
 
 -- // Sections
 -- // Combat Section
