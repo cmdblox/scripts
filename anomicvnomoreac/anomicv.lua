@@ -1,4 +1,4 @@
---//  Anomic Script, old and buggy could use a rewrite entirely i admit.
+--// Anomic Script, old and buggy could use a rewrite entirely i admit.
 
 local mainName = "Anomic V | 2.8.5" 
 if game:GetService("CoreGui"):FindFirstChild(mainName) then
