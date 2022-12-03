@@ -1196,8 +1196,8 @@ cratesection:addButton("Unlock all crates",function()unlockallcrates()end)
 cratesection:addButton("Lock all crates",function()lockallcrates()end)
 cratesection:addButton("turn off colision",function()for i,v in pairs(workspace.Entities:GetChildren()) do if v.Name == "Crate" then v.CanCollide = false end end end)
 itemsection:addButton("Puts all items in your hand",function()for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do v.Parent = game.Players.LocalPlayer.Character end end)
-anomicrp:addButton("Admin Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",9717142314) game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",9716381471))
-anomicrp:addButton("Default Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",903971791) game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",420309149))
+anomicrp:addButton("Admin Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",9717142314) game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",9716381471) end)
+anomicrp:addButton("Default Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",903971791) game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",420309149) end)
 		
 --< teleportation
 teleSection2:addButton("Arway", function()
