@@ -77,6 +77,7 @@ local UISection2 = Ui:addSection("Credits: EdgeIY, for the fly, Alwayswin for a 
 local slogensection = Cmd:addSection("moded by: cmdblock")
 local cratesection = Cmd:addSection("Crates")
 local itemsection = Cmd:addSection("Items")
+local anomicrp = Cmd:addSection("Anomic RP")
 
 
 print("Loading | R")
@@ -1195,6 +1196,8 @@ cratesection:addButton("Unlock all crates",function()unlockallcrates()end)
 cratesection:addButton("Lock all crates",function()lockallcrates()end)
 cratesection:addButton("turn off colision",function()for i,v in pairs(workspace.Entities:GetChildren()) do if v.Name == "Crate" then v.CanCollide = false end end end)
 itemsection:addButton("Puts all items in your hand",function()for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do v.Parent = game.Players.LocalPlayer.Character end end)
+anomicrp:addButton("Admin Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",9717142314) game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",9716381471))
+anomicrp:addButton("Default Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",903971791) game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",420309149))
 		
 --< teleportation
 teleSection2:addButton("Arway", function()
