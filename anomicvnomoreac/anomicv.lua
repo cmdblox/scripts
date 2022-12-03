@@ -1193,7 +1193,7 @@ slogensection:addButton("Say Slogen",function()game.ReplicatedStorage.DefaultCha
 cratesection:addButton("Collect the items from crates",function()getitem()end)
 cratesection:addButton("Unlock all crates",function()unlockallcrates()end)
 cratesection:addButton("Lock all crates",function()lockallcrates()end)
-cratesection:addButton("turn off colision",function()for i,v in pairs(workspace.Entities:GetChildren()) do if v.Name == "Crate" and tostring(v.Properties.Owner.Value) == tostring(lp.Name) then v.CanCollide = false end end end)
+cratesection:addButton("turn off colision",function()for i,v in pairs(workspace.Entities:GetChildren()) do if v.Name == "Crate" then v.CanCollide = false end end end)
 itemsection:addButton("Puts all items in your hand",function()for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do v.Parent = game.Players.LocalPlayer.Character end end)
 		
 --< teleportation
