@@ -1202,15 +1202,22 @@ cratesection:addButton("turn off colision",function() for i,v in pairs(workspace
 itemsection:addButton("Puts all items in your hand",function()for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do v.Parent = game.Players.LocalPlayer.Character end end)
 generation:addSlider("Radius",5,1,1000)
 generation:addSlider("How Many Items",100,1,1000000)
---generation:addButton("Generate Sphere",function() for i=1, generation:FindFirstChild("How Many Items")) do
---    local angle = circle / number_of_parts * i
---    local x_pos = math.cos(angle) * radius
- --   local y_pos = math.sin(angle) * radius
---
---    local v = lp.Backpack["Repair Kit"]
---    v.Parent = lp.Character
- --   v.Grip = CFrame.new(x_pos+1.2, y_pos, -3) * CFrame.Angles(0,math.deg(angle),0)
---end end)
+	for i,v in pairs(game:GetService("CoreGui")["Anomic V | 2.8.5"].Main.CMD.Generation.Container:GetChildren()) do
+		if tostring(v.ClassName) == "ImageButton" then
+			if tostring(v.Title.Text) == "How Many Items" then
+				local howmanyitems = tonumber(v.TextBox.Text)
+			else if tostring(v.Title.Text) == "Radius" then
+				local radius = tonumber(v.TextBox.Text)
+	end end end					
+generation:addButton("Generate Sphere",function() for i=1, math.floor(howmanyitems)) do
+    local angle = circle / number_of_parts * i
+    local x_pos = math.cos(angle) * radius
+   local y_pos = math.sin(angle) * radius
+
+    local v = lp.Backpack["Repair Kit"]
+    v.Parent = lp.Character
+   v.Grip = CFrame.new(x_pos+1.2, y_pos, -3) * CFrame.Angles(0,math.deg(angle),0)
+end end)
 anomicrp:addButton("Admin Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",11724979501) game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("CustomCloth",11724990000) end)
 anomicrp:addButton("Default Clothing",function()game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","White Tanktop") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Work Jeans") game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").EquipAvatarItem:FireServer("Color",Color3.fromRGB(234, 184, 146),"SkinColor") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","No Mask") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","No Glasses") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","No Beard") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","No Jewelry") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Bald") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Modern Cowboy Hat") end)
 anomicrp:addButton("Secret-Agent Clothing",function() game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","No Mask") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Rectangle Shades") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Classic Beard") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Tuxedo Top") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Tuxedo Bottom") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","No Hat") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","No Jewelry") game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Cloth","Messy Hair") end)
