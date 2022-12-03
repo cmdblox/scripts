@@ -74,9 +74,8 @@ local UISection2 = Ui:addSection("Discord: https://discord.gg/jhb37CBT8U")
 local UISection2 = Ui:addSection("Credits: EdgeIY, for the fly, Alwayswin for a few FE features")
 
 -- // Cmd Section
-local slogensection = Cmd:addSection("moded by: cmdblock")
-local 
-ion = Cmd:addSection("Crates")
+local slogensection = Cmd:addSection("moded by: cmdblock") 
+local cratesection = Cmd:addSection("Crates")
 local itemsection = Cmd:addSection("Items")
 local anomicrp = Cmd:addSection("Anomic RP")
 
