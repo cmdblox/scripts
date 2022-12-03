@@ -1877,7 +1877,7 @@ game:GetService("RunService").RenderStepped:connect(function()
             game:GetService("ReplicatedStorage")["_CS.Events"].EquipAvatarItem:FireServer("Color",colorx,"SkinColor")            
         end
     end
-    if ccon then
+    if ccon then --save your bitch ass
 	for i,v in pairs(workspace.Entities:GetChildren()) do if v.Name == "Crate" then for i,v in pairs(v:GetChildren()) do if tostring(v.ClassName) == "Part" then v.CanCollide = false v.Transparency = 0.7 end end end end
 	end
     if speedBypass and LPlayer.Character ~= nil and LPlayer.Character.Humanoid and LPlayer.Character.Humanoid.Parent then
