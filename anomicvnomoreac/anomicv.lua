@@ -79,6 +79,7 @@ local cratesection = Cmd:addSection("Crates")
 local itemsection = Cmd:addSection("Items")
 local anomicrp = Cmd:addSection("Anomic RP")
 local generator = Cmd:addSection("Generate Stuff")
+local camstuff = Cmd:addSection("Camera Stuff")
 
 
 print("Loading | R")
@@ -1227,6 +1228,54 @@ end end end end
     v.Grip = CFrame.new(x_pos+1.2, y_pos, -3) * CFrame.Angles(0,math.deg(angle),0)
 end
 end)
+
+camstuff:addDropdown("Teleports you to the location of the camera for the spawn menu",{ "Arway", "Sheriff Station", "Eastdike", "Eaphis Plateau", "Pahrump", "Okby Steppe", "Depository", "Airfield", "Depot", "Clinic", "Towing Company"},function(text) 
+    local platform1 = Instance.new("Part")
+    local platform2 = Instance.new("Part")
+    local platform3 = Instance.new("Part")
+    local platform4 = Instance.new("Part")
+    local platform5 = Instance.new("Part")
+    local targetcam = text and workspace.Spawns.CameraParts[text] or workspace.Spawns.CameraParts.Arway
+
+    platform1.Parent = workspace
+    platform1.Size = Vector3.new(20,1,20)
+    platform1.Position = targetcam.Position + Vector3.new(0,-5,0)
+    platform1.Anchored = true
+    platform1.Transparency = 1
+
+    platform2.Parent = workspace
+    platform2.Size = Vector3.new(20,1,20)
+    platform2.Position = targetcam.Position + Vector3.new(10,-5,0)
+    platform2.Anchored = true
+    platform2.Rotation = Vector3.new(90,0,90)
+    platform2.Transparency = 1
+
+    platform3.Parent = workspace
+    platform3.Size = Vector3.new(20,1,20)
+    platform3.Position = targetcam.Position + Vector3.new(-10,-5,0)
+    platform3.Anchored = true
+    platform3.Rotation = Vector3.new(90,0,90)
+    platform3.Transparency = 1
+
+    platform4.Parent = workspace
+    platform4.Size = Vector3.new(20,1,20)
+    platform4.Position = targetcam.Position + Vector3.new(0,-5,10)
+    platform4.Anchored = true
+    platform4.Rotation = Vector3.new(90,0,0)
+    platform4.Transparency = 1
+
+    platform5.Parent = workspace
+    platform5.Size = Vector3.new(20,1,20)
+    platform5.Position = targetcam.Position + Vector3.new(0,-5,-10)
+    platform5.Anchored = true
+    platform5.Rotation = Vector3.new(90,0,0)
+    platform5.Transparency = 1
+
+    if lp.Character.HumanoidRootPart.Anchored then lp.Character.HumanoidRootPart.Anchored = false end
+    wait(0.5)
+    lp.Character.HumanoidRootPart.CFrame = targetcam.CFrame			
+end)		
+
 --< teleportation
 teleSection2:addButton("Arway", function()
 if getCurrentVehicle() ~= nil then
