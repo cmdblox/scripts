@@ -1229,7 +1229,7 @@ end end end end
 end
 end)
 
-camstuff:addDropdown("Teleports you to the location of the camera for the spawn menu",{ "Arway", "Sheriff Station", "Eastdike", "Eaphis Plateau", "Pahrump", "Okby Steppe", "Depository", "Airfield", "Depot", "Clinic", "Towing Company"},function(text) 
+camstuff:addDropdown("Tps you to what you see in the spawn menu",{ "Arway", "Sheriff Station", "Eastdike", "Eaphis Plateau", "Pahrump", "Okby Steppe", "Depository", "Airfield", "Depot", "Clinic", "Towing Company"},function(text) 
     local platform1 = Instance.new("Part")
     local platform2 = Instance.new("Part")
     local platform3 = Instance.new("Part")
