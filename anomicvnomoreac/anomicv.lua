@@ -83,24 +83,7 @@ local camstuff = Cmd:addSection("Camera Stuff")
 
 
 print("Loading | R")
-if syn then
-    syn.request({ 
-        Url = "http://127.0.0.1:6463/rpc?v=1",
-        Method = "POST",
-        Headers = {
-        ["Content-Type"] = "application/json",
-        ["Origin"] = "https://discord.com"
-    },
-    print("Loading | R 50%");
-    Body = game:GetService("HttpService"):JSONEncode({
-        cmd = "INVITE_BROWSER",
-        args = {
-            code = "jhb37CBT8U"
-        },
-            nonce = game:GetService("HttpService"):GenerateGUID(false)
-        }),
-    })
-end
+
 
 local chatSettings = require(game:GetService("Chat").ClientChatModules.ChatSettings)
 local chatFrame = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame
