@@ -1319,11 +1319,12 @@ teleSection3:addButton("Safe Spot 3", function()
 if getCurrentVehicle() ~= nil then
     getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(1370.47009, 71.7390747, 1057.67322, -0.805606365, 3.60798893e-08, -0.592451155, 9.24334884e-08, 1, -6.47903775e-08, 0.592451155, -1.06957877e-07, -0.805606365) * CFrame.new(0,5,0))
 else 
+    getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(1370.47009, 71.7390747, 1057.67322, -0.805606365, 3.60798893e-08, -0.592451155, 9.24334884e-08, 1, -6.47903775e-08, 0.592451155, -1.06957877e-07, -0.805606365)end end)
 teleSection3:addButton("Safe Spot 4", function()
 if getCurrentVehicle() ~= nil then
     getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(1370.47009, 71.7390747, 1057.67322, -0.805606365, 3.60798893e-08, -0.592451155, 9.24334884e-08, 1, -6.47903775e-08, 0.592451155, -1.06957877e-07, -0.805606365) * CFrame.new(0,5,0))
 else 
-LPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1370.47009, 71.7390747, 1057.67322, -0.805606365, 3.60798893e-08, -0.592451155, 9.24334884e-08, 1, -6.47903775e-08, 0.592451155, -1.06957877e-07, -0.805606365)end end)
+LPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1370.47009, 71.7390747, 1057.67322, -0.805606365, 3.60798893e-08, -0.592451155, 9.24334884e-08, 1, -6.47903775e-08, 0.592451155, -1.06957877e-07, -0.805606365) end end)
 teleSection4:addButton("Player lobby", function()
 if getCurrentVehicle() ~= nil then
     getCurrentVehicle():SetPrimaryPartCFrame(CFrame.new(369.557709, -1.14998794, -1313.92529, -0.276157141, -6.77183323e-08, -0.961112499, -1.02067128e-08, 1, -6.75255762e-08, 0.961112499, -8.83787088e-09, -0.276157141) * CFrame.new(0,-2,0))
