@@ -1,0 +1,15 @@
+--its in workspace/cmds
+
+local ranks = {"Developer", "Admin", "YouTuber", "Head Admin", "Contributor"}
+for fuk,shit in pairs(ranks) do
+local cmdlist=require(game:GetService("ReplicatedStorage").Client.CmdList)
+local cancmd={}
+for i,v in pairs(cmdlist)do
+if table.find(v.Rank,shit)then
+cancmd[i] = v.Desc
+end end
+if not isfolder("cmds") then
+makefolder("cmds")
+end
+writefile("cmds/What-Cmds-"..shit.."'s-Can-Do.json",(game:GetService("HttpService"):JSONEncode(cancmd)))
+end
