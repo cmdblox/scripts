@@ -1,4 +1,4 @@
-local antianticheat hookfunction(print,function(msg)printconsole(msg)return end)
+local antianticheat hookfunction(print,function(msg)printconsole(tostring(msg))return end)
 
 --// Anomic Script, old and buggy could use a rewrite entirely i admit.
 
