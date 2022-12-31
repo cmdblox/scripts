@@ -1,3 +1,5 @@
+local antianticheat hookfunction(print,function(msg)printconsole(msg)return end)
+
 --// Anomic Script, old and buggy could use a rewrite entirely i admit.
 
 local mainName = "Anomic V | 2.8.5" 
