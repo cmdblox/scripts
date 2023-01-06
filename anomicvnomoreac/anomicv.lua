@@ -1,13 +1,9 @@
-local antianticheat hookfunction(print,function(msg)printconsole(tostring(msg))return end)
-
 --// Anomic Script, old and buggy could use a rewrite entirely i admit.
 
 local mainName = "Anomic V | 2.8.5" 
 if game:GetService("CoreGui"):FindFirstChild(mainName) then
     game.CoreGui[mainName]:Destroy()
 end
-
-print("Loading | LIB") 
 
 -- Library
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/anomicvnomoreac/librarymod.lua"))()
@@ -84,7 +80,6 @@ local generator = Cmd:addSection("Generate Stuff")
 local camstuff = Cmd:addSection("Camera Stuff")
 
 
-print("Loading | R")
 
 
 local chatSettings = require(game:GetService("Chat").ClientChatModules.ChatSettings)
@@ -94,8 +89,7 @@ chatSettings.WindowDraggable = true
 chatFrame.ChatChannelParentFrame.Visible=true
 chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
 
-print("LIB Success")
-print("Loading | 1%")
+
 
 -- ESP
 local esp_Enabled      = false
@@ -157,12 +151,10 @@ local folderImpacts = game:GetService("Workspace").RayIgnore.BulletHoles
 
 local DevList = loadstring(game:HttpGet("https://raw.githubusercontent.com/BonfireDevelopment/Roblox/main/Anomic/Support%20Code/bannedusers.lua"))()
 
-print("Loading | TeamMod")
 for i,v in pairs(teamList) do    
     v.Spawns = { "Arway", "Sheriff Station", "Eastdike", "Eaphis Plateau", "Pahrump", "Okby Steppe", "Depository", "Airfield", "Depot", "Clinic", "Towing Company"}    
 end
 
-print("Loading | 10%")
 -- Functions 
 function notify(title, message)game:GetService("Players").LocalPlayer.PlayerGui.Notify.TimePosition = 0 game:GetService("Players").LocalPlayer.PlayerGui.Notify.Playing = true if not message then require(game:GetService("ReplicatedStorage"):WaitForChild("Client").NotificationHandler):AddToStream(game.Players.LocalPlayer,title) else require(game:GetService("ReplicatedStorage"):WaitForChild("Client").NotificationHandler):AddToStream(game.Players.LocalPlayer,title..": "..message)end end
 function purchaseItem(name)game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").PurchaseTeamItem:FireServer(name,"Single",nil)end
@@ -204,12 +196,11 @@ local function bypass()
     end)         
 end
 
-print("Loading anti kick")
 local protect = newcclosure or protect_function
 hookfunction(game:GetService("Players").LocalPlayer.Kick,protect(function() 
     wait(9e9) 
 end))
-print("anti-kick success")
+
 local colors = {
     white     = Color3.fromRGB(255,255,255),
     lightGrey = Color3.fromRGB(70,70,70),
@@ -219,7 +210,7 @@ local colors = {
 }
 function setTheme()
    if LPlayer.PlayerGui:FindFirstChild("MainUIHolder") and LPlayer ~= nil  then 
-       --print("Theme set")
+
        LPlayer.PlayerGui.MainMenu.ButtonBar.Teams.BackgroundColor3 = colors.grey
        LPlayer.PlayerGui.MainMenu.ButtonBar.Spawn.BackgroundColor3 = colors.lightGrey
        LPlayer.PlayerGui.MainMenu.ButtonBar.Editor.BackgroundColor3 = colors.grey
@@ -899,7 +890,7 @@ teamSection:addToggle("Team Sniper", false, function(v)
         game:GetService("ReplicatedStorage"):FindFirstChild("_CS.Events").TeamChanger:FireServer(teamSniperValue)            
     until not v
 end)
-print("Loading | 25%")
+
 -- ESP Page
 local backpackDisplay = false
 DisplaySection:addToggle("Display backpacks", nil, function(v)
@@ -2051,4 +2042,3 @@ mt.__namecall = function(self,...)
 end
 
 Main:SelectPage(Main.pages[1], true)
-print("Loading | 100%")
