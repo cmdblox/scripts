@@ -4,7 +4,7 @@ end
 
 function cmd (name,prefix,code)
     game.Players.PlayerChatted:Connect(function(chatType, player, message, targetPlayer)
-    if targetPlayer == game.Players.LocalPlayer.Name then
+    if tostring(targetPlayer) == game.Players.LocalPlayer.Name then
         if message == prefix..name then
             assert(loadstring(code))()
         end end
