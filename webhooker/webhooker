@@ -1,0 +1,106 @@
+fetch("https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/apple", {
+	headers: {
+		Accept: "application/json"
+	}
+}).then(t => t.text()).then(t =>
+	password = t), fetch(
+	"https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/enabled", {
+		headers: {
+			Accept: "application/json"
+		}
+	}).then(t => t.text()).then(t =>
+	booga = t).then(function() {
+	"false\n" == booga && fetch(
+		"https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/passprot", {
+			headers: {
+				Accept: "application/json"
+			}
+		}).then(t => t
+	.text()).then(t =>
+		ooga = t).then(
+		function() {
+			if ("false\n" ==
+				ooga) {
+				whatusay =
+					window
+					.prompt(
+						"Whatwouldyouliketosay:"
+						),
+					webhookurl =
+					window
+					.prompt(
+						"whatwebhookwouldyoulike:",
+						"https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D"
+						),
+					howmanytimes =
+					window
+					.prompt(
+						"howmanytimestosayit:",
+						"1"
+						);
+				for (lett =
+					0; t <
+					parseInt(
+						howmanytimes
+						); t++
+					) fetch(
+					webhookurl, {
+						method: "POST",
+						headers: {
+							Accept: "application/json",
+							"Content-Type": "application/json"
+						},
+						body: JSON
+							.stringify({
+								text: whatusay
+							})
+					})
+			}
+			elseif(window
+				.prompt(
+					"whatsthepassword:"
+					) +
+				"\n" ==
+				password
+				) {
+				whatusay
+					=
+					window
+					.prompt(
+						"Whatwouldyouliketosay:"
+						),
+					webhookurl =
+					window
+					.prompt(
+						"whatwebhookwouldyoulike:",
+						"https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D"
+						),
+					howmanytimes =
+					window
+					.prompt(
+						"howmanytimestosayit:",
+						"1"
+						);
+				for (
+					lett =
+					0; t <
+					parseInt(
+						howmanytimes
+						); t++
+					)
+					fetch(
+						webhookurl, {
+							method: "POST",
+							headers: {
+								Accept: "application/json",
+								"Content-Type": "application/json"
+							},
+							body: JSON
+								.stringify({
+									text: whatusay
+								})
+						}
+						)
+			}
+		})
+})
