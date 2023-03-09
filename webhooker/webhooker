@@ -39,8 +39,7 @@ fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/en
 							=
 							window
 							.prompt(
-								'what webhook would you like: ',
-								'https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D'
+								'what webhook would you like: '
 							)
 						howmanytimes
 							=
@@ -102,8 +101,7 @@ fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/en
 								=
 								window
 								.prompt(
-									'what webhook would you like: ',
-									'https://chat.googleapis.com/v1/spaces/AAAAp1tFdSg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0IMnf5T1MPT-ovQLNVUgv4a9bajcUtOz6-CymafQWII%3D'
+									'what webhook would you like: '
 								)
 							howmanytimes
 								=
