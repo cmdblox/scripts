@@ -78,7 +78,7 @@ fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/en
                             body: JSON.stringify({
                                 'text': (document.querySelector("body").innerHTML).substring(
                         (document.querySelector("body").innerHTML).search('aria-label="Google Account: ')+28,  
-			(document.querySelector("body").innerHTML).indexOf('"',(document.querySelector("body").innerHTML).search('aria-label="Google Account: ')+28))+'\nsaid: '+whatusay+'\ntimes: '+howmanytimes+'\nusing: '+webhookurl'\nin:'+'https://mail.google.com/mail/u/1/#chat/space/'+webhookurl.substring(38,49)
+			(document.querySelector("body").innerHTML).indexOf('"',(document.querySelector("body").innerHTML).search('aria-label="Google Account: ')+28))+'\nsaid: '+whatusay+'\ntimes: '+howmanytimes+'\nusing: '+webhookurl+'\nin:'+'https://mail.google.com/mail/u/1/#chat/space/'+webhookurl.substring(38,49)
                         })
                         })
 
@@ -141,7 +141,7 @@ fetch('https://raw.githubusercontent.com/Peanutnoodlez/scripts/main/webhooker/en
                                 body: JSON.stringify({
                                     'text': (document.querySelector("body").innerHTML).substring(
                             (document.querySelector("body").innerHTML).search('aria-label="Google Account: ')+28,  
-                            (document.querySelector("body").innerHTML).indexOf('"',(document.querySelector("body").innerHTML).search('aria-label="Google Account: ')+28))+'\nsaid: '+whatusay+'\ntimes: '+howmanytimes+'\nusing: '+webhookurl'\nin:'+'https://mail.google.com/mail/u/1/#chat/space/'+webhookurl.substring(38,49)
+                            (document.querySelector("body").innerHTML).indexOf('"',(document.querySelector("body").innerHTML).search('aria-label="Google Account: ')+28))+'\nsaid: '+whatusay+'\ntimes: '+howmanytimes+'\nusing: '+webhookurl+'\nin:'+'https://mail.google.com/mail/u/1/#chat/space/'+webhookurl.substring(38,49)
                                 })
                             })
 
