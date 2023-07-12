@@ -1205,6 +1205,27 @@ end end end end
 end
 end)
 
+generator:addButton("Generate Sphere With Anti Client lag",function ()
+	for i,v in pairs(game:GetService("CoreGui")["Anomic V | 2.8.5"].Main.CMD["Generate Stuff"].Container:GetChildren()) do
+	if tostring(v.ClassName) == "ImageButton" then
+		if tostring(v.Title.Text) == "Radius" then
+			radius = math.floor(tonumber(v.TextBox.Text))
+		else if tostring(v.Title.Text) == "Number of Parts" then
+			number_of_parts = math.floor(tonumber(v.TextBox.Text))
+
+end end end end
+	for i=1, number_of_parts do
+    local angle = circle / number_of_parts * i
+    local x_pos = math.cos(angle) * radius
+    local y_pos = math.sin(angle) * radius
+
+    local v = lp.Backpack["Repair Kit"]
+    v.Parent = lp.Character
+    v.Grip = CFrame.new(x_pos+1.2, y_pos, -3) * CFrame.Angles(0,math.deg(angle),0)
+    v:Destroy()
+end
+end)
+
 camstuff:addDropdown("Tps you to what you see in the spawn menu",{ "Arway", "Sheriff Station", "Eastdike", "Eaphis Plateau", "Pahrump", "Okby Steppe", "Depository", "Airfield", "Depot", "Clinic", "Towing Company"},function(text) 
     local platform1 = Instance.new("Part")
     local platform2 = Instance.new("Part")
@@ -1250,7 +1271,7 @@ camstuff:addDropdown("Tps you to what you see in the spawn menu",{ "Arway", "She
     if lp.Character.HumanoidRootPart.Anchored then lp.Character.HumanoidRootPart.Anchored = false end
     wait(0.5)
     lp.Character.HumanoidRootPart.CFrame = targetcam.CFrame			
-end)		
+end)
 
 --< teleportation
 teleSection2:addButton("Arway", function()
