@@ -63,7 +63,7 @@ function cmdui:new(name)
 	scrollingframe.BackgroundTransparency = 0.8
 	scrollingframe.BorderSizePixel = 0
 	scrollingframe.ScrollBarImageColor3 = Color3.fromRGB(127, 35, 255)
-	scrollingframe.ScrollBarThickness = 10
+	scrollingframe.ScrollBarThickness = 0
 	scrollingframe.ScrollingDirection =  'Y'
 	scrollingframe.VerticalScrollBarPosition = 'Left'
 	scrollingframe.CanvasSize = UDim2.new(0, 0,1000, 0)
