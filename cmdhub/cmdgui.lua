@@ -222,3 +222,5 @@ function cmdui:addtoggle(gui,name,default,func)
 
 	return button
 end
+
+return cmdui
