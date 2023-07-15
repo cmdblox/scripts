@@ -3,6 +3,7 @@ lib = loadstring(game:HttpGet("https://github.com/Peanutnoodlez/scripts/raw/main
 local kickphrase = getgenv().kickphrase
 local autoreload = false
 local rapidshotgun = false
+local antikicktog = false
 
 function jsonencode(text) 
 	return game:GetService("HttpService"):JSONEncode(text)
@@ -14,7 +15,6 @@ end
 
 local LPlayer = game.Players.LocalPlayer
 
-local function antikick()
         local s, err = pcall(function()
             local mt = getrawmetatable(game)
             setreadonly(mt, false)
@@ -23,14 +23,14 @@ local function antikick()
             mt.__namecall = function(self,...)
                 local args = {...}
                 if getnamecallmethod() == "Kick" then
-                	if ... ~= kickphrase then
+                	if ... ~= kickphrase and antikick then
           				return nil
                     end
                 end
             return namecall(self,...)
         end
     end)         
-end
+
 
 function getcurrenttool() 
     for i,v in pairs(LPlayer.character:GetChildren()) do
@@ -58,7 +58,6 @@ local userinput = game:GetService('UserInputService')
 
 gui = lib:new('cmd hub')
 
-lib:addbutton(gui,'antikick',antikick())
 lib:addbutton(gui,'kick self',function()
 	game.Players.LocalPlayer:Kick(kickphrase)
 end)
@@ -72,6 +71,10 @@ end)
 
 lib:addtoggle(gui,'rapid shotty',rapidshotgun,function(x)
 	rapidshotgun = x
+end)
+
+lib:addtoggle(gui, 'anti kick', antikicktog,function(x)
+	antikicktog = x
 end)
 
 local clickedown = false
