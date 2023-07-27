@@ -102,6 +102,7 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 
 -- ESP
 local esp_Enabled      = false
+local carespenabled    = false
 local esp_Names        = false
 local esp_Health       = false
 local esp_WantedLevel  = false
@@ -903,6 +904,9 @@ end)
 DisplaySection:addToggle("Join notifications", nil, function(v)
     playerNotify(v)
 end)
+EspSection:addToggle("Car ESP Enabled", nil, function(v)
+    carespenabled = v
+end)
 EspSection:addToggle("ESP Enabled", nil, function(v)
     esp_Enabled = v
 end)
@@ -1573,6 +1577,39 @@ UIS.InputBegan:Connect(function(a)
         end 
     end
 end)
+
+coroutine.wrap(function() --car esp by cmdblock
+    local cars = game:GetService("Workspace").PlayerVehicles
+    local highlight = Instance.new('Highlight')
+    highlight.Name = 'Highlight'
+    while Wait(0.1) do
+        for i,v in pairs(cars:getChildren()) do
+            if not v:FindFirstChild('Highlight') then
+                if carespenabled == false then
+                    if not v.Engine:FindFirstChild('Highlight') then
+                        local highlightclone = highlight:Clone()
+                        highlightclone.Adornee = v.Engine
+                        highlightclone.Parent = v.Engine
+                    end
+                else
+                    if v.Engine:FindFirstChild('Highlight') then
+                        v.Engine:FindFirstChild('Highlight').Adornee = v
+                        v.Engine:FindFirstChild('Highlight').Parent = v
+                    else
+                        local highlightclone = highlight:Clone()
+                        highlightclone.Adornee = v
+                        highlightclone.Parent = v
+                    end
+                end
+            else 
+                if carespenabled == false then
+                    v:FindFirstChild('Highlight').Adornee = v.Engine
+                    v:FindFirstChild('Highlight').Parent = v.Engine
+                end
+            end
+        end
+    end
+end)()
 
 
 game:GetService("RunService").RenderStepped:connect(function()       
