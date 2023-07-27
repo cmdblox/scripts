@@ -79,3 +79,46 @@ userinput.InputBegan:Connect(function(x)
         clickedown = true 
     end
 end)
+userinput.InputEnded:Connect(function(x)
+    if x.UserInputType == Enum.UserInputType.MouseButton1 then
+        clickedown = false
+    end
+end)
+spawn( function()
+while wait(0.00001) do
+	local gun = getcurrenttool()
+	if gun then
+		if checkifgun(gun) then
+			local getlist = game:GetService("ReplicatedStorage"):WaitForChild("_CS.Events").GetList: Invoke()
+            local specs = getlist[gun.Name]
+            if clickedown == true and specs.Firemode == 'Shot' and rapidshotgun then
+				reload(gun.Name)
+				reload(gun.Name)
+				LPlayer.character:FindFirstChild(gun.Name).MainGunScript.FireEvent:Fire(mouse)  
+				LPlayer.character:FindFirstChild(gun.Name).MainGunScript.FireEvent:Fire(mouse)  
+				end
+			end
+		end
+	end
+end )
+
+spawn( function()
+while wait(0.1) do
+    local gun = getcurrenttool()
+    if gun ~= false and autoreload then
+        if checkifgun(gun) then
+            if gun.Handle.Mag.Value <= 0 then
+                local getlist = game:GetService("ReplicatedStorage"):WaitForChild("_CS.Events").GetList: Invoke()
+                local specs = getlist[gun.Name]
+                if specs.Firemode == 'Shot' then
+                    for i = specs.MaxAmmo,1,-1 do 
+                        reload(gun.Name)
+                    end
+                else
+                    reload(gun.Name)
+                    wait(specs.ReloadTime)
+                end
+            end
+        end
+    end
+end end)
