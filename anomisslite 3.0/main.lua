@@ -1584,6 +1584,7 @@ coroutine.wrap(function() --car esp by cmdblock
     highlight.Name = 'Highlight'
     while Wait(0.1) do
         for i,v in pairs(cars:getChildren()) do
+            while not v:FindFirstChild('Engine') do Wait(0.1) end
             if not v:FindFirstChild('Highlight') then
                 if carespenabled == false then
                     if not v.Engine:FindFirstChild('Highlight') then
