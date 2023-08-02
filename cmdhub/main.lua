@@ -92,10 +92,10 @@ while wait(0.00001) do
 			local getlist = game:GetService("ReplicatedStorage"):WaitForChild("_CS.Events").GetList: Invoke()
             local specs = getlist[gun.Name]
             if clickedown == true and specs.Firemode == 'Shot' and rapidshotgun then
+				 for i=getgenv().multishotval,1,-1 do 
 				reload(gun.Name)
-				reload(gun.Name)
-				LPlayer.character:FindFirstChild(gun.Name).MainGunScript.FireEvent:Fire(mouse)  
-				LPlayer.character:FindFirstChild(gun.Name).MainGunScript.FireEvent:Fire(mouse)  
+				LPlayer.character:FindFirstChild(gun.Name).MainGunScript.FireEvent:Fire(mouse)
+						end
 				end
 			end
 		end
